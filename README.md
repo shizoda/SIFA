@@ -1,8 +1,8 @@
 ## Unsupervised Bidirectional Cross-Modality Adaptation via Deeply Synergistic Image and Feature Alignment for Medical Image Segmentation
 
-Tensorflow implementation of our unsupervised cross-modality domain adaptation framework. <br/>
-This is the version of our [TMI paper](https://arxiv.org/abs/2002.02255). <br/>
-Please refer to the branch [SIFA-v1](https://github.com/cchen-cc/SIFA/tree/SIFA-v1) for the version of our AAAI paper. <br/>
+Tensorflow implementation of an unsupervised cross-modality domain adaptation framework. <br/>
+This is the version of this [TMI paper](https://arxiv.org/abs/2002.02255). <br/>
+Please refer to the branch [SIFA-v1](https://github.com/cchen-cc/SIFA/tree/SIFA-v1) for the version of the AAAI paper. <br/>
 
 ## Paper
 [Unsupervised Bidirectional Cross-Modality Adaptation via Deeply Synergistic Image and Feature Alignment for Medical Image Segmentation](https://arxiv.org/abs/2002.02255)
@@ -15,10 +15,10 @@ IEEE Transactions on Medical Imaging
 </p>
 
 ## Installation
-* ~~Install TensorFlow 1.10 and CUDA 9.0~~ This branch works with the Docker image `nvcr.io/nvidia/tensorflow:22.02-tf1-py3` and an Ampere architecture GPU.
-* Clone this repo
+* ~~Install TensorFlow 1.10 and CUDA 9.0~~ This fork works with the Docker image `nvcr.io/nvidia/tensorflow:22.02-tf1-py3` and an Ampere architecture GPU.
+* Clone this repo (updated to this branch)
 ```
-git clone https://github.com/cchen-cc/SIFA
+git clone https://github.com/shizoda/SIFA
 cd SIFA
 ```
 
@@ -33,8 +33,7 @@ cd SIFA
 * Run `./main.py` to start the training process
 
 ## Evaluate
-* Our trained models can be downloaded from [Dropbox](https://www.dropbox.com/sh/787kmmuhvh3e3yb/AAC4qxBJTWwQ1UMN5psrN96ja?dl=0).
-  Note that the data statistics in evaluate.py need to be changed accordingly as specificed in the script.
+* (Modified: Trained models for the original code can be downloaded from the Dropbox link on https://github.com/cchen-cc/SIFA )
 * Specify the model path and test file path in `./evaluate.py`
 * Run `./evaluate.py` to start the evaluation.
 
@@ -63,5 +62,6 @@ If you find the code useful for your research, please cite our paper.
 Part of the code is revised from the [Tensorflow implementation of CycleGAN](https://github.com/leehomyc/cyclegan-1).
 
 ## Note
-* The repository is being updated
-* Contact: Cheng Chen (chencheng236@gmail.com)
+* Original code
+  * https://github.com/cchen-cc/SIFA with original author's contact
+  * Do not contact the original author for the problems specific to this fork!
