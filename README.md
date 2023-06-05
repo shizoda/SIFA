@@ -15,7 +15,7 @@ IEEE Transactions on Medical Imaging
 </p>
 
 ## Installation
-* Install TensorFlow 1.10 and CUDA 9.0
+* ~~Install TensorFlow 1.10 and CUDA 9.0~~ This branch works with the Docker image `nvcr.io/nvidia/tensorflow:22.02-tf1-py3` and an Ampere architecture GPU.
 * Clone this repo
 ```
 git clone https://github.com/cchen-cc/SIFA

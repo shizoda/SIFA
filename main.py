@@ -3,10 +3,10 @@ from datetime import datetime
 import json
 import numpy as np
 import random
-import os
+import os, sys, pdb
 import cv2
 import time
-
+from tqdm import tqdm, trange
 import tensorflow as tf
 
 import data_loader, losses, model
@@ -234,7 +234,7 @@ class SIFA:
         self.s_B_trainer = optimizer_seg.minimize(seg_loss_B, var_list=e_B_vars + s_B_vars + s_B_ll_vars)
 
         for var in self.model_vars:
-            print(var.name)
+            print((var.name))
 
         # Summary variables for tensorboard
         self.g_A_loss_summ = tf.summary.scalar("g_A_loss", g_loss_A)
@@ -306,7 +306,7 @@ class SIFA:
                 return fake
 
     def train(self):
-
+        
         # Load Dataset
         self.inputs = data_loader.load_data(self._source_train_pth, self._target_train_pth, True)
         self.inputs_val = data_loader.load_data(self._source_val_pth, self._target_val_pth, True)
@@ -349,6 +349,7 @@ class SIFA:
             curr_lr_seg = 0.001
             cnt = -1
 
+            print(("Started training loop: _max_step", self._max_step))
             for i in range(self._max_step):
                 starttime = time.time()
 
@@ -505,7 +506,7 @@ class SIFA:
                 writer.flush()
                 self.num_fake_inputs += 1
 
-                print ('iter {}: processing time {}'.format(cnt, time.time() - starttime))
+                print(('iter {}: processing time {}'.format(cnt, time.time() - starttime)))
                 
                 # batch evaluation
                 if (i + 1) % evaluation_interval == 0:
